@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segredos do Porão - Estreia no HorrorHound TV</title>
+    <style>
+        /* --- RESET E BASE --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+            background-color: #0b0a0a;
+            color: #e0dcdc;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+            background-image: radial-gradient(circle at 20% 30%, #1a1212 0%, #080606 95%);
+        }
+
+        .container {
+            max-width: 880px;
+            width: 100%;
+            background: rgba(18, 15, 15, 0.92);
+            backdrop-filter: blur(4px);
+            border-radius: 40px;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(120, 40, 40, 0.2);
+            border: 1px solid rgba(180, 60, 60, 0.15);
+            transition: all 0.2s;
+            text-align: center;
+        }
+
+        /* --- BADGE DESTAQUE --- */
+        .badge {
+            display: inline-block;
+            background: #9e1f1f;
+            color: #f5e6d3;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            padding: 0.4rem 1.6rem;
+            border-radius: 60px;
+            text-transform: uppercase;
+            margin-bottom: 1.8rem;
+            border: 1px solid #d43b3b;
+            box-shadow: 0 0 20px rgba(200, 50, 50, 0.3);
+        }
+
+        /* --- TÍTULOS --- */
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 0.25rem;
+            background: linear-gradient(135deg, #f5e3d3 0%, #cfb4a4 80%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(180, 60, 60, 0.2);
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            font-weight: 300;
+            color: #b8a6a6;
+            margin-top: 0.5rem;
+            margin-bottom: 1.8rem;
+            border-bottom: 1px dashed rgba(160, 80, 80, 0.3);
+            padding-bottom: 1.2rem;
+        }
+
+        .subtitle strong {
+            color: #dbaa8a;
+            font-weight: 600;
+        }
+
+        /* --- INFO PRINCIPAL --- */
+        .info-highlight {
+            background: rgba(60, 20, 20, 0.3);
+            border-left: 4px solid #b33a3a;
+            border-radius: 12px;
+            padding: 1.4rem 1.8rem;
+            margin: 1.8rem 0;
+            text-align: left;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .info-highlight span.emoji-big {
+            font-size: 1.6rem;
+            margin-right: 0.3rem;
+        }
+
+        .finalista {
+            background: #261212;
+            border: 1px solid #b37a3a;
+            color: #f5d7b3;
+            padding: 0.8rem 1.5rem;
+            border-radius: 60px;
+            display: inline-block;
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            margin: 0.5rem 0 1rem 0;
+            box-shadow: 0 0 25px rgba(200, 150, 50, 0.15);
+        }
+
+        .finalista i {
+            font-style: normal;
+            background: #b37a3a;
+            color: #0b0a0a;
+            padding: 0.1rem 0.8rem;
+            border-radius: 40px;
+            margin-left: 0.5rem;
+            font-weight: 800;
+        }
+
+        /* --- BOTÃO PRINCIPAL --- */
+        .btn-assistir {
+            display: inline-block;
+            background: #b31f1f;
+            color: #fffbf7;
+            font-size: 1.6rem;
+            font-weight: 700;
+            padding: 1rem 3.2rem;
+            border-radius: 80px;
+            text-decoration: none;
+            letter-spacing: 1px;
+            border: 1px solid #e05050;
+            box-shadow: 0 8px 0 #601010, 0 12px 35px rgba(200, 30, 30, 0.4);
+            transition: all 0.1s ease;
+            margin: 1.8rem 0 1rem 0;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-assistir:hover {
+            transform: translateY(4px);
+            box-shadow: 0 4px 0 #601010, 0 18px 45px rgba(200, 30, 30, 0.6);
+            background: #c92a2a;
+        }
+
+        .btn-assistir:active {
+            transform: translateY(8px);
+            box-shadow: 0 0px 0 #601010, 0 12px 30px rgba(200, 30, 30, 0.4);
+        }
+
+        .btn-assistir small {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 400;
+            opacity: 0.8;
+            letter-spacing: 2px;
+        }
+
+        /* --- DETALHES DO FILME --- */
+        .detalhes-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.8rem 3rem;
+            margin: 2.2rem 0 0.8rem 0;
+            padding: 1rem 0;
+            border-top: 1px solid rgba(120, 60, 60, 0.2);
+        }
+
+        .detalhes-grid .item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.2rem;
+        }
+
+        .detalhes-grid .item .label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #9a8585;
+        }
+
+        .detalhes-grid .item .valor {
+            font-weight: 600;
+            color: #ebd5c5;
+            font-size: 1rem;
+        }
+
+        .detalhes-grid .item .valor.diretor {
+            color: #dbb08c;
+        }
+
+        /* --- RODAPÉ / COMPARTILHAR --- */
+        .footer-note {
+            margin-top: 2.8rem;
+            font-size: 0.9rem;
+            color: #7a6a6a;
+            border-top: 1px solid rgba(100, 60, 60, 0.2);
+            padding-top: 1.8rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .footer-note .bandeiras {
+            font-size: 1.8rem;
+            letter-spacing: 6px;
+        }
+
+        .footer-note a {
+            color: #b88a7a;
+            text-decoration: none;
+            border-bottom: 1px dotted #6a4a3a;
+        }
+
+        .footer-note a:hover {
+            color: #eccfc0;
+        }
+
+        /* --- RESPONSIVIDADE --- */
+        @media (max-width: 650px) {
+            .container {
+                padding: 1.8rem 1.2rem;
+                border-radius: 28px;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .btn-assistir {
+                font-size: 1.3rem;
+                padding: 0.9rem 2rem;
+                width: 100%;
+                text-align: center;
+            }
+
+            .info-highlight {
+                font-size: 1rem;
+                padding: 1rem 1.2rem;
+            }
+
+            .detalhes-grid {
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 450px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .badge {
+                font-size: 0.7rem;
+                padding: 0.2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Selo de estreia -->
+        <div class="badge">⭐ Estreia oficial hoje ⭐</div>
+
+        <!-- Título principal -->
+        <h1>SEGREDOS DO PORÃO</h1>
+        <div class="subtitle">
+            <strong>Secrets of the Basement</strong> · uma história brasileira de terror
+        </div>
+
+        <!-- Destaque Finalista -->
+        <div class="finalista">
+            🏆 FINALISTA <i>HorrorHound Film Festival 2027</i>
+        </div>
+
+        <!-- Texto de apresentação -->
+        <div class="info-highlight">
+            <span class="emoji-big">🇺🇸</span> <strong>Estreia hoje no HorrorHound TV!</strong><br>
+            O filme brasileiro dirigido por <strong>Capucci Junior</strong> chega à plataforma norte-americana dedicada ao cinema independente de horror.
+            <br><br>
+            <span class="emoji-big">🕰️</span> Produzido originalmente em <strong>2008</strong> e remasterizado, <em>Segredos do Porão</em> ganha nova vida e agora alcança espectadores de todo o mundo.
+        </div>
+
+        <!-- Botão CTA principal -->
+        <a href="https://horrorhound.com/tv/secrets-of-the-basement?utm_source=landingpage" target="_blank" class="btn-assistir">
+            ▶ Assistir agora
+            <small>no HorrorHound TV</small>
+        </a>
+
+        <!-- Mini detalhes -->
+        <div class="detalhes-grid">
+            <div class="item">
+                <span class="label">Diretor</span>
+                <span class="valor diretor">Capucci Junior</span>
+            </div>
+            <div class="item">
+                <span class="label">Plataforma</span>
+                <span class="valor">HorrorHound TV</span>
+            </div>
+            <div class="item">
+                <span class="label">Ano (remaster)</span>
+                <span class="valor">2026</span>
+            </div>
+            <div class="item">
+                <span class="label">Gênero</span>
+                <span class="valor">Terror / Suspense</span>
+            </div>
+        </div>
+
+        <!-- Rodapé com bandeiras e link -->
+        <div class="footer-note">
+            <div class="bandeiras">🇧🇷 🌎 🇺🇸</div>
+            <div>
+                Uma história brasileira que atravessou o tempo para encontrar um novo público internacional.
+            </div>
+            <div style="font-size:0.8rem; margin-top:0.2rem;">
+                <a href="https://horrorhound.com/tv/secrets-of-the-basement?utm_source=landingpage" target="_blank">
+                    🔗 horrorhound.com/tv/secrets-of-the-basement
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
