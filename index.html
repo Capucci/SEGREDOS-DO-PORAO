@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Segredos do Porão - Estreia no HorrorHound TV</title>
     <style>
         /* --- RESET E BASE --- */
@@ -13,8 +13,8 @@
         }
 
         body {
-            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
-            background-color: #0b0a0a;
+            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+            background-color: #080606;
             color: #e0dcdc;
             min-height: 100vh;
             display: flex;
@@ -22,59 +22,130 @@
             align-items: center;
             justify-content: center;
             padding: 2rem 1rem;
-            background-image: radial-gradient(circle at 20% 30%, #1a1212 0%, #080606 95%);
+            background-image: radial-gradient(circle at 20% 20%, #1a0e0e 0%, #050303 95%);
         }
 
         .container {
-            max-width: 880px;
+            max-width: 960px;
             width: 100%;
-            background: rgba(18, 15, 15, 0.92);
+            background: rgba(14, 11, 11, 0.93);
             backdrop-filter: blur(4px);
-            border-radius: 40px;
-            padding: 2.5rem 2rem;
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(120, 40, 40, 0.2);
-            border: 1px solid rgba(180, 60, 60, 0.15);
+            border-radius: 44px;
+            padding: 2.5rem 2.2rem;
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.95), 0 0 0 1px rgba(150, 50, 50, 0.15);
+            border: 1px solid rgba(180, 60, 60, 0.1);
             transition: all 0.2s;
-            text-align: center;
         }
 
-        /* --- BADGE DESTAQUE --- */
+        /* --- HEADER VISUAL (PÔSTER + TRAILER) --- */
+        .media-header {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            margin-bottom: 2.2rem;
+            align-items: stretch;
+        }
+
+        .poster-wrapper {
+            flex: 1 1 240px;
+            min-width: 160px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(200, 80, 80, 0.2);
+            background: #1a1212;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .poster-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .poster-wrapper img:hover {
+            transform: scale(1.02);
+        }
+
+        /* fallback caso a imagem não carregue */
+        .poster-placeholder {
+            background: #1f1414;
+            color: #b38a7a;
+            padding: 2rem 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+            width: 100%;
+            min-height: 280px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+        }
+
+        .poster-placeholder span {
+            font-size: 3.5rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .trailer-wrapper {
+            flex: 2 1 380px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(200, 80, 80, 0.15);
+            background: #0f0b0b;
+            position: relative;
+            aspect-ratio: 16 / 9;
+        }
+
+        .trailer-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+        }
+
+        /* --- BADGE E TÍTULOS --- */
         .badge {
             display: inline-block;
             background: #9e1f1f;
             color: #f5e6d3;
             font-weight: 700;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             letter-spacing: 2px;
             padding: 0.4rem 1.6rem;
             border-radius: 60px;
             text-transform: uppercase;
-            margin-bottom: 1.8rem;
+            margin-bottom: 1.2rem;
             border: 1px solid #d43b3b;
-            box-shadow: 0 0 20px rgba(200, 50, 50, 0.3);
+            box-shadow: 0 0 25px rgba(200, 50, 50, 0.25);
         }
 
-        /* --- TÍTULOS --- */
         h1 {
-            font-size: 3rem;
+            font-size: 3.2rem;
             font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 0.25rem;
+            line-height: 1.05;
+            margin-bottom: 0.15rem;
             background: linear-gradient(135deg, #f5e3d3 0%, #cfb4a4 80%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            text-shadow: 0 0 30px rgba(180, 60, 60, 0.2);
+            text-shadow: 0 0 40px rgba(180, 60, 60, 0.15);
             letter-spacing: -0.5px;
         }
 
         .subtitle {
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             font-weight: 300;
             color: #b8a6a6;
-            margin-top: 0.5rem;
-            margin-bottom: 1.8rem;
-            border-bottom: 1px dashed rgba(160, 80, 80, 0.3);
+            margin-bottom: 1.6rem;
+            border-bottom: 1px dashed rgba(160, 80, 80, 0.25);
             padding-bottom: 1.2rem;
         }
 
@@ -83,35 +154,19 @@
             font-weight: 600;
         }
 
-        /* --- INFO PRINCIPAL --- */
-        .info-highlight {
-            background: rgba(60, 20, 20, 0.3);
-            border-left: 4px solid #b33a3a;
-            border-radius: 12px;
-            padding: 1.4rem 1.8rem;
-            margin: 1.8rem 0;
-            text-align: left;
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-
-        .info-highlight span.emoji-big {
-            font-size: 1.6rem;
-            margin-right: 0.3rem;
-        }
-
+        /* --- FINALISTA --- */
         .finalista {
             background: #261212;
             border: 1px solid #b37a3a;
             color: #f5d7b3;
-            padding: 0.8rem 1.5rem;
+            padding: 0.6rem 1.8rem;
             border-radius: 60px;
             display: inline-block;
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 0.95rem;
             letter-spacing: 0.5px;
-            margin: 0.5rem 0 1rem 0;
-            box-shadow: 0 0 25px rgba(200, 150, 50, 0.15);
+            margin: 0.3rem 0 1.2rem 0;
+            box-shadow: 0 0 30px rgba(200, 150, 50, 0.12);
         }
 
         .finalista i {
@@ -124,21 +179,38 @@
             font-weight: 800;
         }
 
-        /* --- BOTÃO PRINCIPAL --- */
+        /* --- TEXTO INFORMATIVO --- */
+        .info-highlight {
+            background: rgba(60, 20, 20, 0.25);
+            border-left: 4px solid #b33a3a;
+            border-radius: 12px;
+            padding: 1.2rem 1.8rem;
+            margin: 1.2rem 0 1.6rem 0;
+            text-align: left;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .info-highlight .emoji-big {
+            font-size: 1.5rem;
+            margin-right: 0.3rem;
+        }
+
+        /* --- BOTÃO --- */
         .btn-assistir {
             display: inline-block;
             background: #b31f1f;
             color: #fffbf7;
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             font-weight: 700;
-            padding: 1rem 3.2rem;
+            padding: 0.9rem 3rem;
             border-radius: 80px;
             text-decoration: none;
             letter-spacing: 1px;
             border: 1px solid #e05050;
-            box-shadow: 0 8px 0 #601010, 0 12px 35px rgba(200, 30, 30, 0.4);
+            box-shadow: 0 8px 0 #601010, 0 12px 40px rgba(200, 30, 30, 0.35);
             transition: all 0.1s ease;
-            margin: 1.8rem 0 1rem 0;
+            margin: 0.8rem 0 0.5rem 0;
             width: fit-content;
             margin-left: auto;
             margin-right: auto;
@@ -146,7 +218,7 @@
 
         .btn-assistir:hover {
             transform: translateY(4px);
-            box-shadow: 0 4px 0 #601010, 0 18px 45px rgba(200, 30, 30, 0.6);
+            box-shadow: 0 4px 0 #601010, 0 18px 50px rgba(200, 30, 30, 0.5);
             background: #c92a2a;
         }
 
@@ -157,19 +229,19 @@
 
         .btn-assistir small {
             display: block;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 400;
             opacity: 0.8;
             letter-spacing: 2px;
         }
 
-        /* --- DETALHES DO FILME --- */
+        /* --- DETALHES --- */
         .detalhes-grid {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 1.8rem 3rem;
-            margin: 2.2rem 0 0.8rem 0;
+            gap: 1.5rem 3rem;
+            margin: 2rem 0 0.5rem 0;
             padding: 1rem 0;
             border-top: 1px solid rgba(120, 60, 60, 0.2);
         }
@@ -182,7 +254,7 @@
         }
 
         .detalhes-grid .item .label {
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             text-transform: uppercase;
             letter-spacing: 2px;
             color: #9a8585;
@@ -191,20 +263,20 @@
         .detalhes-grid .item .valor {
             font-weight: 600;
             color: #ebd5c5;
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
 
         .detalhes-grid .item .valor.diretor {
             color: #dbb08c;
         }
 
-        /* --- RODAPÉ / COMPARTILHAR --- */
+        /* --- RODAPÉ --- */
         .footer-note {
-            margin-top: 2.8rem;
-            font-size: 0.9rem;
+            margin-top: 2.5rem;
+            font-size: 0.85rem;
             color: #7a6a6a;
             border-top: 1px solid rgba(100, 60, 60, 0.2);
-            padding-top: 1.8rem;
+            padding-top: 1.6rem;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -226,15 +298,37 @@
             color: #eccfc0;
         }
 
-        /* --- RESPONSIVIDADE --- */
-        @media (max-width: 650px) {
+        /* --- RESPONSIVO --- */
+        @media (max-width: 700px) {
             .container {
-                padding: 1.8rem 1.2rem;
-                border-radius: 28px;
+                padding: 1.6rem 1.2rem;
+                border-radius: 30px;
+            }
+
+            .media-header {
+                flex-direction: column;
+                gap: 1.2rem;
+            }
+
+            .poster-wrapper {
+                flex: unset;
+                width: 100%;
+                max-height: 320px;
+            }
+
+            .poster-wrapper img {
+                max-height: 320px;
+                width: 100%;
+                object-fit: cover;
+            }
+
+            .trailer-wrapper {
+                aspect-ratio: 16 / 9;
+                width: 100%;
             }
 
             h1 {
-                font-size: 2.2rem;
+                font-size: 2.4rem;
             }
 
             .subtitle {
@@ -242,30 +336,35 @@
             }
 
             .btn-assistir {
-                font-size: 1.3rem;
-                padding: 0.9rem 2rem;
+                font-size: 1.2rem;
+                padding: 0.8rem 1.8rem;
                 width: 100%;
                 text-align: center;
             }
 
             .info-highlight {
-                font-size: 1rem;
+                font-size: 0.95rem;
                 padding: 1rem 1.2rem;
             }
 
             .detalhes-grid {
-                gap: 1rem;
+                gap: 1rem 2rem;
             }
         }
 
         @media (max-width: 450px) {
             h1 {
-                font-size: 1.8rem;
+                font-size: 1.9rem;
             }
 
             .badge {
-                font-size: 0.7rem;
+                font-size: 0.65rem;
                 padding: 0.2rem 1rem;
+            }
+
+            .finalista {
+                font-size: 0.8rem;
+                padding: 0.4rem 1rem;
             }
         }
     </style>
@@ -274,35 +373,62 @@
 
     <div class="container">
 
-        <!-- Selo de estreia -->
+        <!-- Estreia -->
         <div class="badge">⭐ Estreia oficial hoje ⭐</div>
 
-        <!-- Título principal -->
+        <!-- HEADER: Pôster + Trailer -->
+        <div class="media-header">
+
+            <!-- PÔSTER / IMAGEM DO FILME -->
+            <div class="poster-wrapper">
+                <!-- ⬇️ SUBSTITUA O LINK ABAIXO PELA URL DA SUA IMAGEM -->
+                <img
+                src="https://drive.google.com/file/d/1OjRQYu8wUhxiD8cN27_s4lDyYoLRiwrb/view?usp=sharing"
+                alt="Pôster do filme Segredos do Porão"
+                loading="lazy"
+                />
+                <!-- Se a imagem não carregar, esse bloco não aparece -->
+            </div>
+
+            <!-- TRAILER (YouTube) -->
+            <div class="trailer-wrapper">
+                <!-- ⬇️ SUBSTITUA O LINK PELO SEU TRAILER -->
+                <iframe
+                src="https://drive.google.com/file/d/1WgiRdcPRjbipvbIkNPvwTM1tlQz-JcfA/view?usp=sharing"
+                title="Trailer Segredos do Porão"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                loading="lazy"
+                ></iframe>
+            </div>
+        </div>
+
+        <!-- Título -->
         <h1>SEGREDOS DO PORÃO</h1>
         <div class="subtitle">
             <strong>Secrets of the Basement</strong> · uma história brasileira de terror
         </div>
 
-        <!-- Destaque Finalista -->
+        <!-- Finalista -->
         <div class="finalista">
             🏆 FINALISTA <i>HorrorHound Film Festival 2027</i>
         </div>
 
-        <!-- Texto de apresentação -->
+        <!-- Texto -->
         <div class="info-highlight">
-            <span class="emoji-big">🇺🇸</span> <strong>Estreia hoje no HorrorHound TV!</strong><br>
+            <span class="emoji-big">🇺🇸</span> <strong>Estreia hoje no HorrorHound TV!</strong><br />
             O filme brasileiro dirigido por <strong>Capucci Junior</strong> chega à plataforma norte-americana dedicada ao cinema independente de horror.
-            <br><br>
+            <br /><br />
             <span class="emoji-big">🕰️</span> Produzido originalmente em <strong>2008</strong> e remasterizado, <em>Segredos do Porão</em> ganha nova vida e agora alcança espectadores de todo o mundo.
         </div>
 
-        <!-- Botão CTA principal -->
+        <!-- Botão -->
         <a href="https://horrorhound.com/tv/secrets-of-the-basement?utm_source=landingpage" target="_blank" class="btn-assistir">
             ▶ Assistir agora
             <small>no HorrorHound TV</small>
         </a>
 
-        <!-- Mini detalhes -->
+        <!-- Detalhes -->
         <div class="detalhes-grid">
             <div class="item">
                 <span class="label">Diretor</span>
@@ -322,13 +448,13 @@
             </div>
         </div>
 
-        <!-- Rodapé com bandeiras e link -->
+        <!-- Rodapé -->
         <div class="footer-note">
             <div class="bandeiras">🇧🇷 🌎 🇺🇸</div>
             <div>
                 Uma história brasileira que atravessou o tempo para encontrar um novo público internacional.
             </div>
-            <div style="font-size:0.8rem; margin-top:0.2rem;">
+            <div style="font-size:0.75rem; margin-top:0.2rem;">
                 <a href="https://horrorhound.com/tv/secrets-of-the-basement?utm_source=landingpage" target="_blank">
                     🔗 horrorhound.com/tv/secrets-of-the-basement
                 </a>
