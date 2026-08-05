@@ -3,7 +3,17 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- METADADOS PARA COMPARTILHAMENTO (WhatsApp, Facebook, Twitter) -->
+    <meta property="og:title" content="Segredos do Porão - Estreia no HorrorHound TV" />
+    <meta property="og:description" content="Filme brasileiro de terror dirigido por Capucci Junior. Finalista do HorrorHound Film Festival 2027. Assista agora!" />
+    <meta property="og:image" content="https://i.ibb.co/0cLmxhY/segredos-porao-poster.jpg" />
+    <meta property="og:url" content="https://seudominio.com" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    
     <title>Segredos do Porão - Estreia no HorrorHound TV</title>
+    
     <style>
         /* --- RESET E BASE --- */
         * {
@@ -20,6 +30,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
             padding: 1.5rem 1rem;
             background-image: radial-gradient(circle at 20% 20%, #1a0e0e 0%, #050303 95%);
         }
@@ -33,6 +44,7 @@
             padding: 2rem 2.2rem 2.5rem;
             box-shadow: 0 30px 70px rgba(0, 0, 0, 0.95), 0 0 0 1px rgba(150, 50, 50, 0.15);
             border: 1px solid rgba(180, 60, 60, 0.1);
+            text-align: center; /* TUDO CENTRALIZADO */
         }
 
         /* --- TESTEIRA (HEADER VISUAL 16:9) --- */
@@ -158,10 +170,11 @@
             border-left: 4px solid #b33a3a;
             border-radius: 12px;
             padding: 1.2rem 1.8rem;
-            margin: 1.2rem 0 1.6rem 0;
-            text-align: left;
+            margin: 1.2rem auto 1.6rem auto;
+            text-align: center; /* Centralizado */
             font-size: 1rem;
             line-height: 1.7;
+            max-width: 800px;
         }
 
         .info-highlight .emoji-big {
@@ -183,10 +196,8 @@
             border: 1px solid #e05050;
             box-shadow: 0 8px 0 #601010, 0 12px 40px rgba(200, 30, 30, 0.35);
             transition: all 0.1s ease;
-            margin: 0.5rem 0 0.2rem 0;
+            margin: 0.5rem auto 0.2rem auto;
             width: fit-content;
-            margin-left: auto;
-            margin-right: auto;
         }
 
         .btn-assistir:hover {
@@ -214,9 +225,10 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 1.5rem 3rem;
-            margin: 2rem 0 0.2rem 0;
+            margin: 2rem auto 0.2rem auto;
             padding: 1rem 0;
             border-top: 1px solid rgba(120, 60, 60, 0.2);
+            max-width: 700px;
         }
 
         .detalhes-grid .item {
@@ -335,13 +347,11 @@
 
         <!-- TESTEIRA HORIZONTAL 16:9 -->
         <div class="header-banner">
-            <!-- ⬇️ SUBSTITUA O LINK PELA URL DA SUA IMAGEM (1920x1080 recomendado) -->
             <img
-                src="https://scontent.fplu19-1.fna.fbcdn.net/v/t39.30808-6/764116716_28805300712393483_4281815122597339615_n.jpg?stp=dst-jpg_tt6&cstp=mx1920x1080&ctp=s1920x1080&_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEYckIeK7cXOlhuDkzxdBz9HG8O6PDP71Ucbw7o8M_vVSIWH8Q3RJdgBVP8ZbNBt21bwYi4fsHFmyvgqvTauk7E&_nc_ohc=SU9OcAjB0CEQ7kNvwGWe1FD&_nc_oc=AdrE3poAJscebhgCrL5_8vwMnCN_WZkdNpKfY27YJ7gQISy95cL0Ue5aOcgi_hyiBU58qsOJzP4zN8S_Y062zvYx&_nc_zt=23&_nc_ht=scontent.fplu19-1.fna&_nc_gid=I6AGh3tYKcVX1DFzq0o5uQ&_nc_ss=7d2a8&oh=00_AQFFd0dlsyWOULJt7lJjoUd0g6WKX9r1Vlv1lyF0rmiZEQ&oe=6A7923C8"
+                src="https://i.ibb.co/0cLmxhY/segredos-porao-poster.jpg"
                 alt="Segredos do Porão - Pôster do filme"
                 loading="lazy"
             />
-            <!-- Se quiser, mantenha o placeholder abaixo como fallback -->
         </div>
 
         <!-- Estreia -->
